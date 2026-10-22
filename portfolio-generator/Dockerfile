@@ -12,6 +12,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN ls -la resources/views/portfolios/templates/
+
 RUN composer install --no-dev --optimize-autoloader
 
 RUN chmod -R 775 storage bootstrap/cache
