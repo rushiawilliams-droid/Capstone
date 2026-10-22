@@ -16,6 +16,7 @@ RUN echo "=== CHECKING PORTFOLIO TEMPLATES ===" && ls -la resources/views/portfo
 RUN composer install --no-dev --optimize-autoloader
 
 RUN chmod -R 775 storage bootstrap/cache
+RUN php artisan view:clear && php artisan config:clear
 
 EXPOSE 10000
 
