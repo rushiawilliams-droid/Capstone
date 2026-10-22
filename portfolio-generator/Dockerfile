@@ -13,9 +13,11 @@ WORKDIR /app
 COPY . .
 
 RUN echo "=== CHECKING PORTFOLIO TEMPLATES ===" && ls -la resources/views/portfolios/templates/ && test -f resources/views/portfolios/templates/template_1.blade.php
+
 RUN composer install --no-dev --optimize-autoloader
 
 RUN chmod -R 775 storage bootstrap/cache
+
 RUN php artisan view:clear && php artisan config:clear
 
 EXPOSE 10000
